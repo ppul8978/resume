@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pearl Pulikkottil — Data Scientist & AI Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 14px; }
+body {
+  background: #F5F0E8;
+  color: #141414;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+.page {
+  display: grid;
+  grid-template-columns: minmax(380px, 420px) 1fr;
+  min-height: 100vh;
+}
+.left {
+  background: #EDEAE0;
+  padding: 56px 36px 56px 44px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #C8C3B8;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+.name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 5.5vw, 4.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: #141414;
+  margin-bottom: 20px;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+.name-role {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #7A7A7A;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #C8C3B8;
+}
+.left-section { margin-bottom: 32px; }
+.left-label {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #7A7A7A;
+  margin-bottom: 12px;
+}
+.left-section p,
+.left-section a {
+  font-size: 12.5px;
+  color: #141414;
+  line-height: 1.9;
+  display: block;
+  text-decoration: none;
+}
+.left-section a:hover { text-decoration: underline; }
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.skill-pill {
+  font-size: 11px;
+  background: rgba(20,20,20,0.07);
+  color: #141414;
+  padding: 3px 10px;
+  border: 1px solid rgba(20,20,20,0.12);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #C8C3B8;
+  margin: 24px 0;
+}
+.right {
+  padding: 56px 60px 80px 60px;
+  background: #F5F0E8;
+}
+.section { margin-bottom: 52px; }
+.section-eyebrow {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #7A7A7A;
+  margin-bottom: 6px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #141414;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #141414;
+}
+.summary-text {
+  font-size: 14px;
+  color: #3A3A3A;
+  line-height: 1.8;
+  max-width: 620px;
+}
+.job {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 0 28px;
+  padding: 28px 0;
+  border-bottom: 1px solid #C8C3B8;
+  align-items: start;
+}
+.job:first-child { padding-top: 0; }
+.job:last-child { border-bottom: none; }
+.job-left {
+  align-self: start;
+  padding-top: 3px;
+}
+.job-date {
+  font-size: 11.5px;
+  color: #7A7A7A;
+  line-height: 1.6;
+}
+.job-location {
+  font-size: 11px;
+  color: #A0A0A0;
+  margin-top: 4px;
+}
+.job-right {
+  min-width: 0;
+}
+.job-role {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #141414;
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+.job-org {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7A7A7A;
+  margin-bottom: 16px;
+}
+.stream-label {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #A0A0A0;
+  margin: 16px 0 6px;
+}
+.stream-label:first-of-type { margin-top: 0; }
+.job-right ul {
+  list-style: none;
+  padding: 0;
+}
+.job-right ul li {
+  font-size: 13px;
+  color: #3A3A3A;
+  line-height: 1.75;
+  padding: 3px 0 3px 18px;
+  position: relative;
+}
+.job-right ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #AAAAAA;
+  font-size: 11px;
+  top: 5px;
+}
+strong { font-weight: 600; color: #141414; }
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 48px;
+}
+.skill-category-name {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7A7A7A;
+  margin-bottom: 8px;
+}
+.skills-inline {
+  font-size: 13px;
+  color: #3A3A3A;
+  line-height: 1.75;
+}
+.pub-entry {
+  padding: 20px 0;
+  border-bottom: 1px solid #C8C3B8;
+}
+.pub-entry:last-child { border-bottom: none; }
+.pub-title-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #141414;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.pub-meta { font-size: 12px; color: #7A7A7A; line-height: 1.7; }
+@media (max-width: 860px) {
+  html { font-size: 16px; }
+  .page { display: block; }
+  .left {
+    position: static;
+    height: auto;
+    overflow: visible;
+    padding: 32px 24px;
+    border-right: none;
+    border-bottom: 1px solid #C8C3B8;
+  }
+  .right { padding: 32px 24px 48px; }
+  .name { font-size: clamp(2.5rem, 12vw, 4rem); line-height: 1; }
+  .job {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .job-left { padding-top: 0; }
+  .skills-grid { grid-template-columns: 1fr; gap: 20px; }
+  .section-title { font-size: 1.7rem; }
+  .summary-text { max-width: 100%; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <aside class="left">
+    <div class="name">Pearl Pulikkottil</div>
+    <div class="name-role">
+      Data Scientist &amp; AI Engineer &nbsp;·&nbsp; Sydney, NSW
+    </div>
+    <div class="left-section">
+      <div class="left-label">Contact</div>
+      <a href="tel:+61404084824">+61 404 084 824</a>
+      <a href="mailto:pearl.gpaul@gmail.com">pearl.gpaul@gmail.com</a>
+      <p>Sydney, NSW, Australia</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="left-section">
+      <div class="left-label">GenAI &amp; LLM</div>
+      <div class="skill-list">
+        <span class="skill-pill">Agentic AI</span>
+        <span class="skill-pill">RAG</span>
+        <span class="skill-pill">LLM Evaluation</span>
+        <span class="skill-pill">Prompt Engineering</span>
+        <span class="skill-pill">Few-Shot Learning</span>
+        <span class="skill-pill">LLM-as-Judge</span>
+        <span class="skill-pill">FAISS</span>
+        <span class="skill-pill">ChromaDB</span>
+        <span class="skill-pill">LangChain</span>
+        <span class="skill-pill">LangGraph</span>
+        <span class="skill-pill">AWS Bedrock</span>
+        <span class="skill-pill">HuggingFace</span>
+        <span class="skill-pill">AI Engineering</span>
+        <span class="skill-pill">Microsoft Copilot Studio</span>
+        <span class="skill-pill">OpenAI SDK</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="left-section">
+      <div class="left-label">Languages &amp; Tools</div>
+      <div class="skill-list">
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">R</span>
+        <span class="skill-pill">Java</span>
+        <span class="skill-pill">SQL</span>
+        <span class="skill-pill">MongoDB</span>
+        <span class="skill-pill">Cypher</span>
+        <span class="skill-pill">Docker</span>
+        <span class="skill-pill">GitHub Actions</span>
+        <span class="skill-pill">AWS S3</span>
+        <span class="skill-pill">SageMaker</span>
+        <span class="skill-pill">Streamlit</span>
+        <span class="skill-pill">Claude Code</span>
+        <span class="skill-pill">DHP</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="left-section">
+      <div class="left-label">Domain</div>
+      <div class="skill-list">
+        <span class="skill-pill">Model Risk Management (MRM)</span>
+        <span class="skill-pill">Model Validation</span>
+        <span class="skill-pill">Fraud Analytics</span>
+        <span class="skill-pill">Retail Banking Operations</span>
+        <span class="skill-pill">Customer Service Analytics</span>
+        <span class="skill-pill">MS Dynamics 365</span>
+        <span class="skill-pill">MITRE ATT&amp;CK</span>
+        <span class="skill-pill">Threat Intelligence</span>
+        <span class="skill-pill">Model Governance</span>
+        <span class="skill-pill">STIX 2.1</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="left-section">
+      <div class="left-label">Education</div>
+      <p style="font-weight:600; font-size:13px; margin-bottom:2px;">B. Advanced Computing</p>
+      <p style="color:#7A7A7A; font-size:12px;">University of Sydney · 2020–2024</p>
+      <p style="color:#A0A0A0; font-size:11.5px; margin-top:4px;">Computational Data Science (Major)<br>Statistics (Minor)</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="left-section">
+      <div class="left-label">Published</div>
+      <p style="font-size:12px; color:#3A3A3A; line-height:1.6;">Springer LNNS · ICR'26<br><span style="color:#7A7A7A;">Berlin, August 2026</span><br><span style="color:#A0A0A0; font-size:11px;">SCOPUS · DBLP · INSPEC</span></p>
+    </div>
+  </aside>
+
+  <main class="right">
+
+    <section class="section">
+      <div class="section-eyebrow">Overview</div>
+      <div class="section-title">Profile</div>
+      <p class="summary-text">Data Scientist at Commonwealth Bank of Australia with production experience across agentic AI, generative AI, RAG pipelines, LLM evaluation, and model governance. Delivered end-to-end ML and GenAI systems across cybersecurity, customer risk, and customer service domains. Published researcher (Springer LNNS, ICR'26). Comfortable across the full stack — from model design and prompt engineering through Docker containerisation, CI/CD deployment, and enterprise governance sign-off.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-eyebrow">Career</div>
+      <div class="section-title">Experience</div>
+
+      <div class="job">
+        <div class="job-left">
+          <div class="job-date">Feb 2025<br>Present</div>
+          <div class="job-location">Sydney, NSW</div>
+        </div>
+        <div class="job-right">
+          <div class="job-role">Graduate Data Scientist — Rotational Program</div>
+          <div class="job-org">Commonwealth Bank of Australia</div>
+
+          <div class="stream-label">Cybersecurity AI</div>
+          <ul>
+            <li>Built a <strong>RAG + few-shot LLM pipeline</strong> for enterprise-scale cyber threat intelligence extraction, mapping adversary behaviours to MITRE ATT&CK techniques — part of CBA's publicly reported <strong>TIARA</strong> system (<a href="https://www.itnews.com.au/news/cba-builds-two-ai-agents-to-boost-cyber-defences-624356" style="color:#141414;">ITNews, 2025</a>). Expanded ATT&CK technique coverage from ~190 to 600+; <strong>reduced false positives by 18%</strong> via a multi-pass LLM validation layer</li>
+            <li>Architected <strong>AIDEN</strong>, a generative AI system that automatically produces cyber deception campaigns by extracting attack chain narratives and mapping them to MITRE ATT&CK — supporting red team and threat hunting operations at enterprise scale.</li>
+            <li>Benchmarked competing LLM-based threat intelligence pipelines (RAG vs. few-shot approaches) across precision, recall, and latency to inform production tooling decisions.</li>
+            <li>Deployed AI tooling on CBA's internal cloud hosting platform (<strong>DHP</strong>) via <strong>GitHub Actions CI/CD</strong> integrated with AWS (S3, CloudWatch); optimised Docker containerisation using multi-stage builds and UV cache mounts to accelerate deployment for rapid iteration based on analyst feedback.</li>
+            <li>Redesigned an analyst-facing <strong>Streamlit UI</strong> based on direct cyber analyst feedback, integrating a persistent chat pane and dynamic sizing to streamline interactive prompt building.</li>
+          </ul>
+
+          <div class="stream-label">AI Model Risk, Validation &amp; Governance</div>
+          <ul>
+            <li>Validated an <strong>agentic AI classification system</strong> for automated Spam Act complaints triage, where the model identifies whether customer complaints relate to spam in accordance with Australian Communications and Media Authority (ACMA) regulatory requirements. Conducted detailed code review and model behaviour analysis across edge cases, assessing robustness of the classification pipeline, feature logic, and decision traceability. Engaged with model owners, developers, and subject matter experts (SMEs) to validate assumptions and interpret edge-case behaviours. Identified production-readiness gaps in logging, explainability, and failure-mode handling, and produced structured governance documentation to support audit readiness and model approval.</li>
+            <li>Led end-to-end <strong>LLM evaluation and validation</strong> of a reusable <strong>guardrails-as-a-service (GaaS)</strong> framework in particular the multi-turn <strong>agentic AI safety system</strong> designed for deployment across multiple generative AI use cases. Independently replicated developer evaluation results and implemented quantitative benchmarking across key performance metrics including accuracy, precision, recall, and F1-score. Collaborated with developers, model owners, and SMEs to align evaluation assumptions, interpret failure cases, and validate adversarial testing methodology. Performed adversarial testing across jailbreak attempts, prompt injection, vulnerability exploitation, and real-world customer complaint scenarios to evaluate model robustness, safety alignment, and reliability under non-deterministic multi-turn interactions.</li>
+            <li>Reviewed the <strong>monitoring and governance framework</strong> for the guardrails system, evaluating statistical rigour, drift detection logic, and escalation design for multi-turn LLM behaviour. Partnered with model owners and engineering teams to clarify monitoring objectives and ensure alignment with production constraints and risk appetite. Identified gaps in alert thresholds, evaluation coverage, and operational ownership across model risk controls. Provided recommendations to strengthen observability, improve evaluation consistency, and ensure alignment with enterprise responsible AI governance and model risk management standards.</li>
+          </ul>
+
+          <div class="stream-label">Customer Service — Agent Assist (GenAI)</div>
+          <ul>
+            <li>Optimised <strong>GenAI-powered agent assist capabilities</strong> within Microsoft Dynamics 365 Customer Service (CCaaS), including real-time Q&amp;A, conversation summarisation, and intent recognition. Applied iterative prompt engineering, LOB-specific testing, and structured <strong>LLM-as-a-judge evaluation pipelines</strong> in collaboration with SMEs to evaluate response quality, factual accuracy, and task completion performance across customer service scenarios.</li>
+            <li>Designed and configured <strong>agentic intent recognition workflows</strong> for home loan pre-qualification use cases, enabling consistent classification of customer intent within regulated lending workflows. Engaged with Microsoft product engineers to identify platform capability gaps and drive extensibility improvements, ensuring alignment with bank-specific regulatory, compliance, and audit requirements including traceability, explainability, and policy adherence.</li>
+            <li>Engaged directly with <strong>Microsoft developers</strong> to enhance <strong>conversation summarisation prompt architecture</strong>, including increasing the prompt character limit to improve context retention for long customer interactions. Conducted controlled evaluation experiments demonstrating measurable improvements in summarisation coherence, completeness, and factual consistency, using <strong>LLM-as-a-judge evaluation metrics</strong>. Ensured outputs adhered to <strong>audit and reporting requirements</strong> for regulated customer interactions. Experimented with <strong>Microsoft Power Platform connectors</strong> to automate and streamline downstream workflow processes, reducing manual intervention in summarisation handling and evaluation pipelines. Validated improvements through SME review and structured feedback, confirming higher-quality outputs aligned with operational customer service requirements.</li>
+            <li>Transformed undocumented operational procedures and SME knowledge into structured, <strong>AI-readable knowledge assets</strong> for ingestion into Dynamics 365 GenAI features. Collaborated with SMEs to extract tacit operational knowledge and reformat it into retrieval-optimised structures, improving grounding quality, reducing hallucination risk, and increasing accuracy of agent-assist responses across customer servicing workflows.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-left">
+          <div class="job-date">Sep 2023<br>Oct 2024</div>
+          <div class="job-location">Sydney, NSW</div>
+        </div>
+        <div class="job-right">
+          <div class="job-role">UPIP Intern — Data &amp; Analytics, (Fraud Control &amp; Behavioural Insights)</div>
+          <div class="job-org">Australian Taxation Office</div>
+          <ul>
+            <li>Built an automated near real-time analytics reporting tool in <strong>R</strong> to support fraud and financial crime detection decision-making, enabling faster identification of suspicious behavioural patterns and operational risk signals. Iteratively refined requirements through stakeholder presentations, feedback cycles, and alignment with investigative team needs.</li>
+            <li>Collaborated on <strong>machine learning model development</strong> for fraud and behavioural risk detection, supporting feature exploration, data preparation, and performance evaluation. Applied <strong>graph-based analytics using TigerGraph</strong> to model and analyse complex entity relationships, enabling deeper network-level insights into potentially coordinated or anomalous activity.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-left">
+          <div class="job-date">Nov 2022<br>Feb 2023</div>
+          <div class="job-location">Sydney, NSW</div>
+        </div>
+        <div class="job-right">
+          <div class="job-role">Summer Vacationer Intern — Forensic Discovery</div>
+          <div class="job-org">Deloitte Australia</div>
+          <ul>
+            <li>Created ML document classification models using <strong>LayoutLM</strong> for automated eDiscovery workflows.</li>
+            <li>Managed large-scale legal datasets; used forensic software to preserve and analyse electronic evidence.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-left">
+          <div class="job-date">Jun 2020<br>Jan 2025</div>
+          <div class="job-location">Sydney, NSW</div>
+        </div>
+        <div class="job-right">
+          <div class="job-role">General Assistant</div>
+          <div class="job-org">TAFE NSW</div>
+          <ul>
+            <li>Front-facing customer service across multiple channels; managed café operations and lab equipment preparation.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-eyebrow">Technical</div>
+      <div class="section-title">Skills</div>
+      <div class="skills-grid">
+        <div>
+          <div class="skill-category-name">AI Engineering &amp; GenAI</div>
+          <div class="skills-inline">
+            Agentic AI, Retrieval-Augmented Generation (RAG), LLM Evaluation,
+            Prompt Engineering, Few-Shot Learning, LLM-as-Judge,
+            LangChain, LangGraph, AWS Bedrock, OpenAI SDK,
+            Hugging Face, FAISS, ChromaDB
+          </div>
+        </div>
+        <div>
+          <div class="skill-category-name">Machine Learning &amp; Analytics</div>
+          <div class="skills-inline">
+            Machine Learning, Natural Language Processing (NLP),
+            Statistical Analysis, Data Visualisation,
+            Model Validation, Model Risk &amp; Governance,
+            SQL, MongoDB, neo4j Cypher, TigerGraph, H2O.ai, PowerBI, Tableau
+          </div>
+        </div>
+        <div>
+          <div class="skill-category-name">Software Engineering &amp; MLOps</div>
+          <div class="skills-inline">
+            Python, R, Java, Docker, GitHub Actions,
+            CI/CD, AWS (S3, CloudWatch, SageMaker),
+            Streamlit, DHP, Git, VS Code, JupyterLab,
+            Claude Code, OpenCode, GitHub Copilot, Cline
+          </div>
+        </div>
+        <div>
+          <div class="skill-category-name">Cybersecurity &amp; Enterprise Platforms</div>
+          <div class="skills-inline">
+            MITRE ATT&amp;CK, STIX 2.1, Threat Intelligence,
+            Microsoft Dynamics 365 CCaaS,
+            Jira, Confluence, MkDocs, Quarto, Obsidian
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-eyebrow">Research</div>
+      <div class="section-title">Publication</div>
+      <div class="pub-entry">
+        <div class="pub-title-text">Enhancing Mathematical Reasoning Education with Data-Driven Fine-Tuning of Large Language Models</div>
+        <div class="pub-meta">Anaissi, A., Liu, D., Pulikkottil, P., Akram, J. &amp; Nawaz, M. (2026)<br>
+        <em>Springer Lecture Notes in Networks and Systems (LNNS)</em> · Paper ID ICR6478<br>
+        Presented at ICR'26, Berlin · Indexed: SCOPUS, DBLP, INSPEC, SCImago, zbMATH</div>
+      </div>
+    </section>
+
+  </main>
+</div>
+</body>
+</html>
